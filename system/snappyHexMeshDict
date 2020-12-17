@@ -128,28 +128,28 @@ castellatedMeshControls
         auto
         {
             // Surface-wise min and max refinement level
-            level (3 4);
+            level (2 4);
 
             // Optional specification of patch type (default is wall). No
             // constraint types (cyclic, symmetry) etc. are allowed.
             patchInfo
             {
                 type patch;
-                inGroups (motorBikeGroup);
+                inGroups (objetos);
             }
         }
         
         camion
         {
             // Surface-wise min and max refinement level
-            level (5 6);
+            level (2 4);
 
             // Optional specification of patch type (default is wall). No
             // constraint types (cyclic, symmetry) etc. are allowed.
             patchInfo
             {
                 type patch;
-                inGroups (motorBikeGroup);
+                inGroups (objetos);
             }
         }
     }
@@ -190,7 +190,7 @@ castellatedMeshControls
     // section reachable from the locationInMesh is kept.
     // NOTE: This point should never be on a face, always inside a cell, even
     // after refinement.
-    locationInMesh (3.0001 3.0001 0.5);
+    locationInMesh (20.0001 2.0001 0.1);
 
 
     // Whether any faceZones (as specified in the refinementSurfaces)
@@ -206,7 +206,7 @@ snapControls
 {
     //- Number of patch smoothing iterations before finding correspondence
     //  to surface
-    nSmoothPatch 3;
+    nSmoothPatch 2;
 
     //- Relative distance for points to be attracted by surface feature point
     //  or edge. True distance is this factor times local

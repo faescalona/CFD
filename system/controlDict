@@ -23,15 +23,15 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         200;
+endTime         4000;
 
-deltaT          1;
+deltaT          10;
 
 writeControl    timeStep;
 
-writeInterval   20;
+writeInterval   2;
 
-purgeWrite      190;
+purgeWrite      0;
 
 writeFormat     ascii;
 
@@ -41,9 +41,11 @@ writeCompression off;
 
 timeFormat      general;
 
-timePrecision   20;
+timePrecision   12;
 
 runTimeModifiable true;
+
+adjustTimeStep false;
 
 functions
 {

@@ -21,48 +21,48 @@ FoamFile
     {
         type            empty;
         inGroups        1(empty);
-        nFaces          1373;
-        startFace       26686;
+        nFaces          5736;
+        startFace       58104;
     }
     inlet
     {
         type            patch;
         nFaces          8;
-        startFace       28059;
+        startFace       63840;
     }
     outlet
     {
         type            patch;
-        nFaces          77;
-        startFace       28067;
+        nFaces          8;
+        startFace       63848;
     }
     lowerWall
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          308;
-        startFace       28144;
+        nFaces          310;
+        startFace       63856;
     }
     upperWall
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          22;
-        startFace       28452;
+        nFaces          55;
+        startFace       64166;
     }
     auto
     {
         type            patch;
-        inGroups        1(motorBikeGroup);
-        nFaces          1632;
-        startFace       28474;
+        inGroups        1(objetos);
+        nFaces          896;
+        startFace       64221;
     }
     camion
     {
         type            patch;
-        inGroups        1(motorBikeGroup);
-        nFaces          2075;
-        startFace       30106;
+        inGroups        1(objetos);
+        nFaces          8446;
+        startFace       65117;
     }
 )
 
