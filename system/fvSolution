@@ -1,0 +1,89 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+
+ //   p
+//    {
+//        solver          GAMG;
+//        tolerance       1e-20;
+//        relTol          0.1;
+//        smoother        GaussSeidel;
+ //   }
+    p
+    {
+        solver          GAMG;
+        tolerance       1e-20;
+      	relTol          0.0001;
+        smoother        GaussSeidel;
+        nPreSweeps      0;
+        nPostSweeps     2;
+        cacheAgglomeration on;
+        agglomerator    faceAreaPair;
+        nCellsInCoarsestLevel 10;
+        mergeLevels     1;
+    }
+
+    "(U|k|epsilon|R|nuTilda)"
+    {
+        solver          smoothSolver;
+        smoother        GaussSeidel;
+        nSweeps         2;
+        tolerance       1e-20;
+        relTol          0.001;
+    }
+}
+
+SIMPLE
+{
+    nNonOrthogonalCorrectors 0;
+    
+//   UMax      50;
+//   pMin      pMin   [0 2 -2 0 0 0 0]    -1000;
+//   pMax      pMax   [0 2 -2 0 0 0 0]     1000;
+
+//	nuTildaMax 1;
+	
+//		nuTildaMin 0;
+
+    residualControl
+    {
+        p               1e-8;
+        U               1e-8;
+        "(k|epsilon)" 1e-5;
+        nuTilda         1e-8;
+    }
+}
+
+relaxationFactors
+{
+    fields
+    {
+        p               0.8;
+    }
+    equations
+    {
+        U               0.6;
+        k               0.5;
+        epsilon         0.5;
+        nuTilda         0.5;
+    }
+}
+
+
+// ************************************************************************* //
