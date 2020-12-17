@@ -11,7 +11,7 @@ Se debe correr de la siguiente manera:
 - ```snappyHexMesh -overwrite``` Se demora harto, aproximadamente unos 8 minutos
 - ```checkMesh -allGeometry -allTopology```
 - ```simpleFoam```
-## Cual es el problema?
+## Cuál es el problema?
 
 El problema es que conforme se itera el modelo pasa esto
 
